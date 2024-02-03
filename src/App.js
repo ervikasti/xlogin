@@ -23,7 +23,7 @@ function App() {
   const handleSubmit = (e) => {
 
     e.preventDefault();
-    if(form.username == 'user' && form.password == 'password'){
+    if(form.username === 'user' && form.password === 'password'){
       setError(false);
       setIsLogin(true);
     }else{
@@ -35,7 +35,7 @@ function App() {
     <div>
       <h1>Login Page</h1>
       {error?<div className={styles.error}>Invalid username or password</div>:null}
-      {isLogin?<div>Welcome, user</div>:
+      {isLogin?<div>Welcome, {form.username}</div>:
       <form onSubmit={handleSubmit}>
         <label htmlFor='username'>Username:</label>
         <input type='text' id='username' name='username' placeholder='username' value={form.username} onChange={handleChange}required/><br/>
